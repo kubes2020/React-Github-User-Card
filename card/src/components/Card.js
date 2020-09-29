@@ -2,7 +2,7 @@ import React from "react";
 
 class Card extends React.Component {
   render() {
-    // console.log("the Card list", this.props.allFollowers);
+    console.log("the Card list", this.props.allFollowers);
     return (
       <>
         <h2>Card</h2>

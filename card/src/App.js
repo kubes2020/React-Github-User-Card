@@ -35,7 +35,8 @@ class App extends React.Component {
       .then((res) => {
         console.log("gh response", res.data);
         this.setState({
-          followers: res.data,
+          ...this.state,
+          followers: [...this.state.followers, res.data],
         });
       })
       .catch((err) => {
