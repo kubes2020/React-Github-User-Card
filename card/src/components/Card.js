@@ -5,7 +5,7 @@ class Card extends React.Component {
     console.log("the Card list", this.props.allFollowers);
     return (
       <>
-        <h2>Card</h2>
+        <h2>Followers</h2>
         {this.props.allFollowers.map((fol) => (
           <div className="card-container">
             <p>{fol.login}</p>

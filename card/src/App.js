@@ -67,7 +67,7 @@ class App extends React.Component {
         </div>
         <form onSubmit={this.onSubmit}>
           <label htmlFor="user">
-            Enter User To Find Followers
+            Enter User To Find Followers:
             <input
               type="text"
               id="user"
