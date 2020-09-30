@@ -13,8 +13,6 @@ class App extends React.Component {
     };
   }
 
-  // user = "kubes2020";
-
   componentDidMount() {
     console.log("comp did mount");
     axios
@@ -40,7 +38,7 @@ class App extends React.Component {
         });
       })
       .catch((err) => {
-        console.log("something wong", err);
+        console.log("something wrong", err);
       });
   };
 
