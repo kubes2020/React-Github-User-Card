@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      me: [],
       followers: [],
       user: "",
     };
@@ -21,7 +22,7 @@ class App extends React.Component {
       .then((res) => {
         console.log("gh response", res.data);
         this.setState({
-          followers: [res.data],
+          me: res.data,
         });
       })
       .catch((err) => {
@@ -35,8 +36,7 @@ class App extends React.Component {
       .then((res) => {
         console.log("gh response", res.data);
         this.setState({
-          ...this.state,
-          followers: [...this.state.followers, res.data],
+          followers: res.data,
         });
       })
       .catch((err) => {
@@ -60,10 +60,14 @@ class App extends React.Component {
     console.log("did render");
     return (
       <>
-        <h1>Followers</h1>
+        <h1>Github</h1>
+        <div className="me-container">
+          <p>{this.state.me.login}</p>
+          <img src={this.state.me.avatar_url} alt="pic" />
+        </div>
         <form onSubmit={this.onSubmit}>
           <label htmlFor="user">
-            Name of User
+            Enter User To Find Followers
             <input
               type="text"
               id="user"
